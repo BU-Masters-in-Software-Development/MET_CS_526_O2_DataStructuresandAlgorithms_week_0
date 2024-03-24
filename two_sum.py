@@ -15,7 +15,13 @@ EXAMPLE: Nums = [3,4,5,10] Target = 13
 Return [0, 3]
 """
 def two_sum(nums: list, target: int):
-    return 0
+    indices = {}
+    for i, num in enumerate(nums):
+        if num in indices:
+            return [indices[num], i]
+        indices[target - num] = i
+    return None
+
 
 
 """
